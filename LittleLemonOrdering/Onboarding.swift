@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct globalVariables {
+struct GlobalVariables {
     static let kFirstName = "first name key"
     static let kLastName = "last name key"
-    static let email = "email key"
+    static let kemail = "email key"
+    static let kIsLoggedIn = "kIsLoggedIn"
 }
 
 struct Onboarding: View {
@@ -31,13 +32,21 @@ struct Onboarding: View {
                 TextField("Last Name", text: $lastName)
                 TextField("Email", text: $email)
                 Button("Register") {
-                    UserDefaults.standard.set(firstName, forKey: globalVariables.kFirstName)
-                    UserDefaults.standard.set(lastName, forKey: globalVariables.kLastName)
-                    UserDefaults.standard.set(email, forKey: globalVariables.email)
+                    UserDefaults.standard.set(firstName, forKey: GlobalVariables.kFirstName)
+                    UserDefaults.standard.set(lastName, forKey: GlobalVariables.kLastName)
+                    UserDefaults.standard.set(email, forKey: GlobalVariables.kemail)
                     
                     isLoggedin = true
+                    UserDefaults.standard.setValue(isLoggedin, forKey: GlobalVariables.kIsLoggedIn)
                     
-                }.disabled(firstName.isEmpty || lastName.isEmpty || email.isEmpty || !email.isValidEmail)
+                }
+                .disabled(firstName.isEmpty || lastName.isEmpty || email.isEmpty || !email.isValidEmail)
+                .onAppear {
+                    if UserDefaults.standard.bool(forKey: GlobalVariables.kIsLoggedIn) {
+                        isLoggedin = true
+                    }
+                }
+                    
             }
         }
     }
