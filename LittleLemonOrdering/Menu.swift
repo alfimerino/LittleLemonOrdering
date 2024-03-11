@@ -65,6 +65,8 @@ struct Menu: View {
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(dish.title ?? "unknown dish")
+                                Text(dish.descriptionText ?? "Unknown description")
+                                    .font(.caption)
                                 Text(("$\(dish.price ?? "00").00"))
                             }
                             Spacer()
@@ -141,6 +143,7 @@ struct Menu: View {
                             newItem.price = item.price
                             newItem.image = item.image
                             newItem.category = item.category
+                            newItem.descriptionText = item.description
                         }
                     }
                     do {
