@@ -12,6 +12,10 @@ struct SearchBar: View {
 
     var body: some View {
         HStack {
+            Image(systemName: "magnifyingglass.circle")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 25)
             TextField("Search", text: $text)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             Button(action: {

@@ -13,7 +13,7 @@ struct LittleLemonOrderingApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Onboarding()
+            FirstOnboarding()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

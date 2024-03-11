@@ -65,6 +65,8 @@ struct Menu: View {
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(dish.title ?? "unknown dish")
+                                Text(dish.descriptionText ?? "Unknown description")
+                                    .font(.caption)
                                 Text(("$\(dish.price ?? "00").00"))
                             }
                             Spacer()
@@ -80,18 +82,18 @@ struct Menu: View {
                 .listStyle(.inset)
                     .toolbar {
                         ToolbarItem(placement: .principal) {
-                            Image("little-lemon-logo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(height: 40)
+                            OnboardingHeaderView()
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            NavigationLink(destination: UserProfile()) {
+                                Image(.profileImagePlaceholder)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            }
                         }
                     }
-                    .toolbarColorScheme(.dark, for: .navigationBar)
-                    
-                    .toolbarBackground(
-                        Color.littleLemonGreen,
-                        for: .navigationBar)
-                    .toolbarBackground(.visible, for: .navigationBar)
                     .navigationBarTitleDisplayMode(.inline)
             }.onAppear {
                 deleteAllItems()
@@ -141,6 +143,7 @@ struct Menu: View {
                             newItem.price = item.price
                             newItem.image = item.image
                             newItem.category = item.category
+                            newItem.descriptionText = item.description
                         }
                     }
                     do {
