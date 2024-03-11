@@ -24,6 +24,11 @@
 		383312882B9F46F90049FA9A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312872B9F46F90049FA9A /* SearchBar.swift */; };
 		3833128C2B9F61A20049FA9A /* FirstOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833128B2B9F61A20049FA9A /* FirstOnboarding.swift */; };
 		3833128E2B9F64FD0049FA9A /* YellowButtonTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833128D2B9F64FD0049FA9A /* YellowButtonTextView.swift */; };
+		383312912B9F66F80049FA9A /* OnboardingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312902B9F66F80049FA9A /* OnboardingHeaderView.swift */; };
+		383312932B9F67340049FA9A /* OnboardingPrimeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312922B9F67340049FA9A /* OnboardingPrimeImage.swift */; };
+		383312952B9F67C00049FA9A /* OnboardingTextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312942B9F67C00049FA9A /* OnboardingTextViews.swift */; };
+		383312972B9F68450049FA9A /* SecondOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312962B9F68450049FA9A /* SecondOnboarding.swift */; };
+		383312992B9F6E730049FA9A /* ThirdOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312982B9F6E730049FA9A /* ThirdOnboarding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +50,11 @@
 		383312872B9F46F90049FA9A /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		3833128B2B9F61A20049FA9A /* FirstOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboarding.swift; sourceTree = "<group>"; };
 		3833128D2B9F64FD0049FA9A /* YellowButtonTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowButtonTextView.swift; sourceTree = "<group>"; };
+		383312902B9F66F80049FA9A /* OnboardingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderView.swift; sourceTree = "<group>"; };
+		383312922B9F67340049FA9A /* OnboardingPrimeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPrimeImage.swift; sourceTree = "<group>"; };
+		383312942B9F67C00049FA9A /* OnboardingTextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextViews.swift; sourceTree = "<group>"; };
+		383312962B9F68450049FA9A /* SecondOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboarding.swift; sourceTree = "<group>"; };
+		383312982B9F6E730049FA9A /* ThirdOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboarding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				3833125F2B9E52410049FA9A /* LittleLemonOrderingApp.swift */,
-				383312742B9E52D90049FA9A /* Onboarding.swift */,
 				383312762B9E604C0049FA9A /* Home.swift */,
 				383312632B9E52430049FA9A /* Assets.xcassets */,
+				3833129A2B9F6FF90049FA9A /* OnboardingViews */,
 				383312682B9E52430049FA9A /* Persistence.swift */,
 				3833126A2B9E52430049FA9A /* LittleLemonOrdering.xcdatamodeld */,
 				383312652B9E52430049FA9A /* Preview Content */,
@@ -92,8 +102,7 @@
 				383312822B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld */,
 				383312852B9F307D0049FA9A /* MenuHeader.swift */,
 				383312872B9F46F90049FA9A /* SearchBar.swift */,
-				3833128B2B9F61A20049FA9A /* FirstOnboarding.swift */,
-				3833128D2B9F64FD0049FA9A /* YellowButtonTextView.swift */,
+				3833128F2B9F66CA0049FA9A /* Reusable Components */,
 			);
 			path = LittleLemonOrdering;
 			sourceTree = "<group>";
@@ -104,6 +113,28 @@
 				383312662B9E52430049FA9A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3833128F2B9F66CA0049FA9A /* Reusable Components */ = {
+			isa = PBXGroup;
+			children = (
+				3833128D2B9F64FD0049FA9A /* YellowButtonTextView.swift */,
+				383312902B9F66F80049FA9A /* OnboardingHeaderView.swift */,
+				383312922B9F67340049FA9A /* OnboardingPrimeImage.swift */,
+				383312942B9F67C00049FA9A /* OnboardingTextViews.swift */,
+			);
+			path = "Reusable Components";
+			sourceTree = "<group>";
+		};
+		3833129A2B9F6FF90049FA9A /* OnboardingViews */ = {
+			isa = PBXGroup;
+			children = (
+				383312982B9F6E730049FA9A /* ThirdOnboarding.swift */,
+				3833128B2B9F61A20049FA9A /* FirstOnboarding.swift */,
+				383312962B9F68450049FA9A /* SecondOnboarding.swift */,
+				383312742B9E52D90049FA9A /* Onboarding.swift */,
+			);
+			path = OnboardingViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +209,9 @@
 			files = (
 				383312882B9F46F90049FA9A /* SearchBar.swift in Sources */,
 				383312842B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld in Sources */,
+				383312932B9F67340049FA9A /* OnboardingPrimeImage.swift in Sources */,
 				383312792B9E607B0049FA9A /* Menu.swift in Sources */,
+				383312952B9F67C00049FA9A /* OnboardingTextViews.swift in Sources */,
 				383312692B9E52430049FA9A /* Persistence.swift in Sources */,
 				3833127B2B9E65F90049FA9A /* UserProfile.swift in Sources */,
 				3833128E2B9F64FD0049FA9A /* YellowButtonTextView.swift in Sources */,
@@ -186,8 +219,11 @@
 				3833127D2B9E70160049FA9A /* FetchedObjects.swift in Sources */,
 				383312772B9E604D0049FA9A /* Home.swift in Sources */,
 				3833126C2B9E52430049FA9A /* LittleLemonOrdering.xcdatamodeld in Sources */,
+				383312972B9F68450049FA9A /* SecondOnboarding.swift in Sources */,
 				3833127F2B9E70590049FA9A /* MenuList.swift in Sources */,
+				383312992B9F6E730049FA9A /* ThirdOnboarding.swift in Sources */,
 				383312862B9F307D0049FA9A /* MenuHeader.swift in Sources */,
+				383312912B9F66F80049FA9A /* OnboardingHeaderView.swift in Sources */,
 				383312602B9E52410049FA9A /* LittleLemonOrderingApp.swift in Sources */,
 				383312812B9E70670049FA9A /* MenuItem.swift in Sources */,
 				3833128C2B9F61A20049FA9A /* FirstOnboarding.swift in Sources */,
