@@ -20,6 +20,8 @@
 		3833127F2B9E70590049FA9A /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833127E2B9E70590049FA9A /* MenuList.swift */; };
 		383312812B9E70670049FA9A /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312802B9E70670049FA9A /* MenuItem.swift */; };
 		383312842B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 383312822B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld */; };
+		383312862B9F307D0049FA9A /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312852B9F307D0049FA9A /* MenuHeader.swift */; };
+		383312882B9F46F90049FA9A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312872B9F46F90049FA9A /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		3833127E2B9E70590049FA9A /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 		383312802B9E70670049FA9A /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		383312832B9F1D590049FA9A /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
+		383312852B9F307D0049FA9A /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
+		383312872B9F46F90049FA9A /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				3833127E2B9E70590049FA9A /* MenuList.swift */,
 				383312802B9E70670049FA9A /* MenuItem.swift */,
 				383312822B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld */,
+				383312852B9F307D0049FA9A /* MenuHeader.swift */,
+				383312872B9F46F90049FA9A /* SearchBar.swift */,
 			);
 			path = LittleLemonOrdering;
 			sourceTree = "<group>";
@@ -164,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				383312882B9F46F90049FA9A /* SearchBar.swift in Sources */,
 				383312842B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld in Sources */,
 				383312792B9E607B0049FA9A /* Menu.swift in Sources */,
 				383312692B9E52430049FA9A /* Persistence.swift in Sources */,
@@ -173,6 +180,7 @@
 				383312772B9E604D0049FA9A /* Home.swift in Sources */,
 				3833126C2B9E52430049FA9A /* LittleLemonOrdering.xcdatamodeld in Sources */,
 				3833127F2B9E70590049FA9A /* MenuList.swift in Sources */,
+				383312862B9F307D0049FA9A /* MenuHeader.swift in Sources */,
 				383312602B9E52410049FA9A /* LittleLemonOrderingApp.swift in Sources */,
 				383312812B9E70670049FA9A /* MenuItem.swift in Sources */,
 			);

@@ -14,37 +14,77 @@ struct Menu: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Dish.title, ascending: true)],
         animation: .default)
     private var dishes: FetchedResults<Dish>
+    @State private var selected = 1
+    @State private var searchText = ""
     
     
     private var responseString = ""
     @State private var menuData: MenuList?
     @State private var errorMessage: String?
     var body: some View {
-        VStack {
-            Text("Little Lemon")
-            Text("Chicago")
-            Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist")
-            
-            List {
-                ForEach(Array(dishes.enumerated()), id: \.element.id) { index, dish in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(dish.title ?? "unknown dish")
-                            Text(("$\(dish.price ?? "00").00"))
+        NavigationView {
+            VStack {
+                MenuHeader()
+                SearchBar(text: $searchText)
+                    .padding([.horizontal, .top], 6)
+                HStack {
+                    Text("Order for Delivery")
+                        .font(.title3)
+                        .bold()
+                    Spacer()
+                }.padding(.leading)
+                HStack {
+                    Text("Filter by:")
+                        .foregroundStyle(Color.gray)
+                        .font(.caption)
+                    Spacer()
+                }.padding(.leading)
+                Picker(selection: $selected, label: Text("Favorite Color")) {
+                                Text("All").tag(1)
+                                Text("Main Dish").tag(2)
+                                Text("Appetizers").tag(3)
+                                Text("Desserts").tag(4)
+                                Text("Drinks").tag(5)
+                            }
+                            .pickerStyle(.palette)
+                            .padding(.horizontal, 8)
+                List {
+                    ForEach(Array(dishes.enumerated()), id: \.element.id) { index, dish in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(dish.title ?? "unknown dish")
+                                Text(("$\(dish.price ?? "00").00"))
+                            }
+                            Spacer()
+                            AsyncImage(url: URL(string: dish.image ?? "")) { image in
+                                image.resizable()
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            .frame(width: 50, height: 50)
                         }
-                        Spacer()
-                        AsyncImage(url: URL(string: dish.image ?? "")) { image in
-                            image.resizable()
-                        } placeholder: {
-                            ProgressView()
-                        }
-                        .frame(width: 50, height: 50)
                     }
                 }
+                .listStyle(.inset)
+                    .toolbar {
+                        ToolbarItem(placement: .principal) {
+                            Image("little-lemon-logo")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(height: 40)
+                        }
+                    }
+                    .toolbarColorScheme(.dark, for: .navigationBar)
+                    
+                    .toolbarBackground(
+                        Color.littleLemonGreen,
+                        for: .navigationBar)
+                    .toolbarBackground(.visible, for: .navigationBar)
+                    .navigationBarTitleDisplayMode(.inline)
+            }.onAppear {
+                deleteAllItems()
+                getMenuData()
             }
-        }.onAppear {
-            deleteAllItems()
-            getMenuData()
         }
     }
     
