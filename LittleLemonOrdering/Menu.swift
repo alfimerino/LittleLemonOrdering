@@ -14,13 +14,26 @@ struct Menu: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Dish.title, ascending: true)],
         animation: .default)
     private var dishes: FetchedResults<Dish>
-    @State private var selected = 1
+    @State private var selected = "all"
     @State private var searchText = ""
     
     
     private var responseString = ""
     @State private var menuData: MenuList?
     @State private var errorMessage: String?
+    
+    private var filteredDishes: [Dish] {
+            if searchText.isEmpty && selected == "all" {
+                return Array(dishes)
+            } else {
+                return dishes.filter { dish in
+                    let nameMatch = searchText.isEmpty || dish.title?.localizedCaseInsensitiveContains(searchText) ?? false
+                    let categoryMatch = selected == "all" || dish.category == selected
+                    return nameMatch && categoryMatch
+                }
+            }
+        }
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -40,16 +53,15 @@ struct Menu: View {
                     Spacer()
                 }.padding(.leading)
                 Picker(selection: $selected, label: Text("Favorite Color")) {
-                                Text("All").tag(1)
-                                Text("Main Dish").tag(2)
-                                Text("Appetizers").tag(3)
-                                Text("Desserts").tag(4)
-                                Text("Drinks").tag(5)
-                            }
-                            .pickerStyle(.palette)
-                            .padding(.horizontal, 8)
+                                Text("All").tag("all")
+                                Text("Starters").tag("starters")
+                                Text("Mains").tag("mains")
+                                Text("Desserts").tag("desserts")
+                }
+                .pickerStyle(.palette)
+                .padding(.horizontal, 8)
                 List {
-                    ForEach(Array(dishes.enumerated()), id: \.element.id) { index, dish in
+                    ForEach(Array(filteredDishes.enumerated()), id: \.element.id) { index, dish in
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(dish.title ?? "unknown dish")
@@ -128,7 +140,7 @@ struct Menu: View {
                             newItem.title = item.title
                             newItem.price = item.price
                             newItem.image = item.image
-                            print(item.image)
+                            newItem.category = item.category
                         }
                     }
                     do {
