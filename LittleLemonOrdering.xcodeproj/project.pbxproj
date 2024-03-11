@@ -16,6 +16,10 @@
 		383312772B9E604D0049FA9A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312762B9E604C0049FA9A /* Home.swift */; };
 		383312792B9E607B0049FA9A /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312782B9E607B0049FA9A /* Menu.swift */; };
 		3833127B2B9E65F90049FA9A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833127A2B9E65F90049FA9A /* UserProfile.swift */; };
+		3833127D2B9E70160049FA9A /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833127C2B9E70160049FA9A /* FetchedObjects.swift */; };
+		3833127F2B9E70590049FA9A /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833127E2B9E70590049FA9A /* MenuList.swift */; };
+		383312812B9E70670049FA9A /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312802B9E70670049FA9A /* MenuItem.swift */; };
+		383312842B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 383312822B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		383312762B9E604C0049FA9A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		383312782B9E607B0049FA9A /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		3833127A2B9E65F90049FA9A /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		3833127C2B9E70160049FA9A /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
+		3833127E2B9E70590049FA9A /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
+		383312802B9E70670049FA9A /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		383312832B9F1D590049FA9A /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,10 @@
 				383312652B9E52430049FA9A /* Preview Content */,
 				383312782B9E607B0049FA9A /* Menu.swift */,
 				3833127A2B9E65F90049FA9A /* UserProfile.swift */,
+				3833127C2B9E70160049FA9A /* FetchedObjects.swift */,
+				3833127E2B9E70590049FA9A /* MenuList.swift */,
+				383312802B9E70670049FA9A /* MenuItem.swift */,
+				383312822B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld */,
 			);
 			path = LittleLemonOrdering;
 			sourceTree = "<group>";
@@ -152,13 +164,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				383312842B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld in Sources */,
 				383312792B9E607B0049FA9A /* Menu.swift in Sources */,
 				383312692B9E52430049FA9A /* Persistence.swift in Sources */,
 				3833127B2B9E65F90049FA9A /* UserProfile.swift in Sources */,
 				383312752B9E52D90049FA9A /* Onboarding.swift in Sources */,
+				3833127D2B9E70160049FA9A /* FetchedObjects.swift in Sources */,
 				383312772B9E604D0049FA9A /* Home.swift in Sources */,
 				3833126C2B9E52430049FA9A /* LittleLemonOrdering.xcdatamodeld in Sources */,
+				3833127F2B9E70590049FA9A /* MenuList.swift in Sources */,
 				383312602B9E52410049FA9A /* LittleLemonOrderingApp.swift in Sources */,
+				383312812B9E70670049FA9A /* MenuItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +389,17 @@
 			);
 			currentVersion = 3833126B2B9E52430049FA9A /* LittleLemonOrdering.xcdatamodel */;
 			path = LittleLemonOrdering.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		383312822B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				383312832B9F1D590049FA9A /* ExampleDatabase.xcdatamodel */,
+			);
+			currentVersion = 383312832B9F1D590049FA9A /* ExampleDatabase.xcdatamodel */;
+			name = ExampleDatabase.xcdatamodeld;
+			path = /Users/alfredomerino/Desktop/LittleLemonOrdering/LittleLemonOrdering/ExampleDatabase.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
