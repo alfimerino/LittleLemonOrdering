@@ -80,10 +80,16 @@ struct Menu: View {
                 .listStyle(.inset)
                     .toolbar {
                         ToolbarItem(placement: .principal) {
-                            Image("little-lemon-logo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(height: 40)
+                            OnboardingHeaderView()
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            NavigationLink(destination: UserProfile()) {
+                                Image(.profileImagePlaceholder)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            }
                         }
                     }
                     .navigationBarTitleDisplayMode(.inline)

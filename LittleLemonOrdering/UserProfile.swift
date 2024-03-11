@@ -18,21 +18,31 @@ struct UserProfile: View {
     
     
     var body: some View {
-        VStack {
+        VStack(alignment: .center) {
+            OnboardingHeaderView()
             Text("Personal Information")
+                .font(.title)
+                .bold()
             Image("profile-image-placeholder", label: Text("Jenna"))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 160)
                 .clipShape(Circle())
-            
-            Text(firstName)
-            Text(lastName)
+            HStack(alignment: .center) {
+                Text(firstName)
+                    .font(.title)
+                Text(lastName)
+                    .font(.title)
+            }
             Text(email)
-            
-            Button("Log Out") {
+                .font(.title3)
+            Button {
                 UserDefaults.standard.setValue(false, forKey: GlobalVariables.kIsLoggedIn)
                 self.presentation.wrappedValue.dismiss()
+            } label: {
+                YellowButtonTextView(buttonText: "Log out")
+                    .clipShape(Capsule())
+                    .padding(.top, 30)
             }
             Spacer()
         }

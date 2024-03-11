@@ -100,9 +100,7 @@
 				3833127E2B9E70590049FA9A /* MenuList.swift */,
 				383312802B9E70670049FA9A /* MenuItem.swift */,
 				383312822B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld */,
-				383312852B9F307D0049FA9A /* MenuHeader.swift */,
-				383312872B9F46F90049FA9A /* SearchBar.swift */,
-				3833128F2B9F66CA0049FA9A /* Reusable Components */,
+				3833128F2B9F66CA0049FA9A /* Components */,
 			);
 			path = LittleLemonOrdering;
 			sourceTree = "<group>";
@@ -115,15 +113,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		3833128F2B9F66CA0049FA9A /* Reusable Components */ = {
+		3833128F2B9F66CA0049FA9A /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				3833128D2B9F64FD0049FA9A /* YellowButtonTextView.swift */,
 				383312902B9F66F80049FA9A /* OnboardingHeaderView.swift */,
 				383312922B9F67340049FA9A /* OnboardingPrimeImage.swift */,
 				383312942B9F67C00049FA9A /* OnboardingTextViews.swift */,
+				383312852B9F307D0049FA9A /* MenuHeader.swift */,
+				383312872B9F46F90049FA9A /* SearchBar.swift */,
 			);
-			path = "Reusable Components";
+			path = Components;
 			sourceTree = "<group>";
 		};
 		3833129A2B9F6FF90049FA9A /* OnboardingViews */ = {
