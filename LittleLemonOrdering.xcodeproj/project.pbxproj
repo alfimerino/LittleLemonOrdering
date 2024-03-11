@@ -22,6 +22,8 @@
 		383312842B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 383312822B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld */; };
 		383312862B9F307D0049FA9A /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312852B9F307D0049FA9A /* MenuHeader.swift */; };
 		383312882B9F46F90049FA9A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383312872B9F46F90049FA9A /* SearchBar.swift */; };
+		3833128C2B9F61A20049FA9A /* FirstOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833128B2B9F61A20049FA9A /* FirstOnboarding.swift */; };
+		3833128E2B9F64FD0049FA9A /* YellowButtonTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833128D2B9F64FD0049FA9A /* YellowButtonTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		383312832B9F1D590049FA9A /* ExampleDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExampleDatabase.xcdatamodel; sourceTree = "<group>"; };
 		383312852B9F307D0049FA9A /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
 		383312872B9F46F90049FA9A /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		3833128B2B9F61A20049FA9A /* FirstOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboarding.swift; sourceTree = "<group>"; };
+		3833128D2B9F64FD0049FA9A /* YellowButtonTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowButtonTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				383312822B9F1D590049FA9A /* ExampleDatabase.xcdatamodeld */,
 				383312852B9F307D0049FA9A /* MenuHeader.swift */,
 				383312872B9F46F90049FA9A /* SearchBar.swift */,
+				3833128B2B9F61A20049FA9A /* FirstOnboarding.swift */,
+				3833128D2B9F64FD0049FA9A /* YellowButtonTextView.swift */,
 			);
 			path = LittleLemonOrdering;
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 				383312792B9E607B0049FA9A /* Menu.swift in Sources */,
 				383312692B9E52430049FA9A /* Persistence.swift in Sources */,
 				3833127B2B9E65F90049FA9A /* UserProfile.swift in Sources */,
+				3833128E2B9F64FD0049FA9A /* YellowButtonTextView.swift in Sources */,
 				383312752B9E52D90049FA9A /* Onboarding.swift in Sources */,
 				3833127D2B9E70160049FA9A /* FetchedObjects.swift in Sources */,
 				383312772B9E604D0049FA9A /* Home.swift in Sources */,
@@ -183,6 +190,7 @@
 				383312862B9F307D0049FA9A /* MenuHeader.swift in Sources */,
 				383312602B9E52410049FA9A /* LittleLemonOrderingApp.swift in Sources */,
 				383312812B9E70670049FA9A /* MenuItem.swift in Sources */,
+				3833128C2B9F61A20049FA9A /* FirstOnboarding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

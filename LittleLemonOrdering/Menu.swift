@@ -86,12 +86,6 @@ struct Menu: View {
                                 .frame(height: 40)
                         }
                     }
-                    .toolbarColorScheme(.dark, for: .navigationBar)
-                    
-                    .toolbarBackground(
-                        Color.littleLemonGreen,
-                        for: .navigationBar)
-                    .toolbarBackground(.visible, for: .navigationBar)
                     .navigationBarTitleDisplayMode(.inline)
             }.onAppear {
                 deleteAllItems()
