@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserProfile: View {
     @Environment(\.presentationMode) var presentation
+    @Environment(\.managedObjectContext) private var viewContext
     
     private let firstName: String = UserDefaults.standard.string(forKey: GlobalVariables.kFirstName) ?? "Jenna"
     
@@ -36,13 +37,23 @@ struct UserProfile: View {
             }
             Text(email)
                 .font(.title3)
-            NavigationLink(destination: FirstOnboarding()) {
+            Button(action: {
+                self.logOut = true
+                viewContext.reset()
+            }) {
                 YellowButtonTextView(buttonText: "Log out")
                     .clipShape(Capsule())
                     .padding(.top, 30)
             }
-            Spacer()
+            NavigationLink(
+                destination: FirstOnboarding(),
+                isActive: $logOut
+            ) {
+                EmptyView()
+            }
+            .hidden()
         }
+        Spacer()
     }
 }
 

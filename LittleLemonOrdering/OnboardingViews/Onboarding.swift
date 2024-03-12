@@ -36,12 +36,22 @@ struct Onboarding: View {
                         .textFieldStyle(.roundedBorder)
                     TextField("Email", text: $email)
                         .textFieldStyle(.roundedBorder)
-                    NavigationLink(destination: Menu()) {
+                    Button(action: {
+                        saveUserAccount()
+                        self.isLoggedin = true
+                    }) {
                         YellowButtonTextView(buttonText: "Register", buttonDisabled: buttonDisabled())
-                                           .clipShape(Capsule())
-                                           .padding(.top, 30)
-                                           .disabled(buttonDisabled())
+                            .clipShape(Capsule())
+                            .padding(.top, 30)
+                            .disabled(buttonDisabled())
                     }
+                    NavigationLink(
+                        destination: Menu(),
+                        isActive: $isLoggedin
+                    ) {
+                        EmptyView()
+                    }
+                    .hidden()
                 }
                 Spacer()
             }

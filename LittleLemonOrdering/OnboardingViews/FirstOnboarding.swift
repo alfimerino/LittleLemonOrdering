@@ -22,6 +22,9 @@ struct FirstOnboarding: View {
             }
             .onAppear {
                 UserDefaults.standard.setValue(false, forKey: GlobalVariables.kIsLoggedIn)
+                UserDefaults.standard.setValue("", forKey: GlobalVariables.kFirstName)
+                UserDefaults.standard.setValue("", forKey: GlobalVariables.kLastName)
+                UserDefaults.standard.setValue("", forKey: GlobalVariables.kemail)
             }
         }
     }
@@ -30,3 +33,12 @@ struct FirstOnboarding: View {
 #Preview {
     FirstOnboarding()
 }
+
+
+/*
+ private let firstName: String = UserDefaults.standard.string(forKey: GlobalVariables.kFirstName) ?? "Jenna"
+ 
+ private let lastName: String = UserDefaults.standard.string(forKey: GlobalVariables.kLastName) ?? "Boynton"
+ 
+ private let email: String = UserDefaults.standard.string(forKey: GlobalVariables.kemail) ?? "info@jenna.com"
+ */
