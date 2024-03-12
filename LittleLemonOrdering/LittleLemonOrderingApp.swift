@@ -13,8 +13,13 @@ struct LittleLemonOrderingApp: App {
 
     var body: some Scene {
         WindowGroup {
-            FirstOnboarding()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if UserDefaults.standard.bool(forKey: GlobalVariables.kIsLoggedIn) {
+                Menu()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            } else {
+                FirstOnboarding()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
 }

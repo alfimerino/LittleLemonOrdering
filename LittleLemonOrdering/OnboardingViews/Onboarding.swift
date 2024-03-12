@@ -26,9 +26,6 @@ struct Onboarding: View {
             VStack {
                 OnboardingHeaderView()
                 Spacer()
-                NavigationLink(destination: Home(), isActive: $isLoggedin) {
-                    EmptyView()
-                }
                 VStack(spacing: 18) {
                     Text("Create your Account")
                         .font(.title)
@@ -39,17 +36,12 @@ struct Onboarding: View {
                         .textFieldStyle(.roundedBorder)
                     TextField("Email", text: $email)
                         .textFieldStyle(.roundedBorder)
-                    Button {
-                        saveUserAccount()
-                    } label: {
-                            YellowButtonTextView(buttonText: "Register", buttonDisabled: buttonDisabled())
-                    }.clipShape(.capsule)
-                        .disabled(buttonDisabled())
-                        .onAppear {
-                            if UserDefaults.standard.bool(forKey: GlobalVariables.kIsLoggedIn) {
-                                isLoggedin = true
-                            }
-                        }
+                    NavigationLink(destination: Menu()) {
+                        YellowButtonTextView(buttonText: "Register", buttonDisabled: buttonDisabled())
+                                           .clipShape(Capsule())
+                                           .padding(.top, 30)
+                                           .disabled(buttonDisabled())
+                    }
                 }
                 Spacer()
             }
@@ -68,9 +60,6 @@ struct Onboarding: View {
         UserDefaults.standard.set(firstName, forKey: GlobalVariables.kFirstName)
         UserDefaults.standard.set(lastName, forKey: GlobalVariables.kLastName)
         UserDefaults.standard.set(email, forKey: GlobalVariables.kemail)
-        
-        isLoggedin = true
-        UserDefaults.standard.setValue(isLoggedin, forKey: GlobalVariables.kIsLoggedIn)
     }
 }
 

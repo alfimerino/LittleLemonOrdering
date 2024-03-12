@@ -35,7 +35,7 @@ struct Menu: View {
         }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 MenuHeader()
                 SearchBar(text: $searchText)
@@ -95,7 +95,10 @@ struct Menu: View {
                         }
                     }
                     .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarBackButtonHidden(true)
+                    
             }.onAppear {
+                UserDefaults.standard.setValue(true, forKey: GlobalVariables.kIsLoggedIn)
                 deleteAllItems()
                 getMenuData()
             }

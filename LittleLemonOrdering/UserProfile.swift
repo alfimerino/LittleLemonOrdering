@@ -15,7 +15,7 @@ struct UserProfile: View {
     private let lastName: String = UserDefaults.standard.string(forKey: GlobalVariables.kLastName) ?? "Boynton"
     
     private let email: String = UserDefaults.standard.string(forKey: GlobalVariables.kemail) ?? "info@jenna.com"
-    
+    @State private var logOut = false
     
     var body: some View {
         VStack(alignment: .center) {
@@ -36,10 +36,7 @@ struct UserProfile: View {
             }
             Text(email)
                 .font(.title3)
-            Button {
-                UserDefaults.standard.setValue(false, forKey: GlobalVariables.kIsLoggedIn)
-                self.presentation.wrappedValue.dismiss()
-            } label: {
+            NavigationLink(destination: FirstOnboarding()) {
                 YellowButtonTextView(buttonText: "Log out")
                     .clipShape(Capsule())
                     .padding(.top, 30)

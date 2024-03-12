@@ -14,13 +14,6 @@ struct Home: View {
         Menu()
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
-//        TabView {
-//            Menu()
-//                .environment(\.managedObjectContext, persistance.container.viewContext)
-//                .tabItem { Label("Menu", systemImage: "list.dash") }
-//            UserProfile()
-//                .tabItem { Label("Profile", systemImage: "square.and.pencil") }
-//        }.navigationBarBackButtonHidden(true)
     }
 }
 
