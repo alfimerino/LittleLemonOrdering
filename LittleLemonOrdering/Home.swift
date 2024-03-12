@@ -9,18 +9,24 @@ import SwiftUI
 
 struct Home: View {
     private let persistance = PersistenceController.shared
-    @State private var isLoggedIn = UserDefaults.standard.bool(forKey: GlobalVariables.kIsLoggedIn)
+    @AppStorage(GlobalVariables.kIsLoggedIn) private var isLoggedIn = false //
     
     var body: some View {
-        if isLoggedIn {
-            Menu()
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarBackButtonHidden(true)
-        } else {
-            FirstOnboarding()
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarBackButtonHidden(true)
+        NavigationView {
+            if isLoggedIn {
+                TabView {
+                    Menu()
+                        .tabItem { Label("Menu", systemImage: "list.dash") }
+                    
+                    UserProfile()
+                        .tabItem { Label("Profile", systemImage: "square.and.pencil") }
+                }
+            } else {
+                FirstOnboarding()
+                    .navigationBarTitleDisplayMode(.inline)
+            }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

@@ -37,9 +37,7 @@ struct Menu: View {
     var body: some View {
         NavigationStack {
             VStack {
-                MenuHeader()
-                SearchBar(text: $searchText)
-                    .padding([.horizontal, .top], 6)
+                MenuHeader(searchText: $searchText)
                 HStack {
                     Text("Order for Delivery")
                         .font(.title3)

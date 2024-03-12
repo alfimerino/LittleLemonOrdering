@@ -52,8 +52,8 @@ struct UserProfile: View {
                 EmptyView()
             }
             .hidden()
+            Spacer()
         }
-        Spacer()
     }
 }
 
