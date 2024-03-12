@@ -21,9 +21,7 @@ struct FirstOnboarding: View {
                     .navigationBarBackButtonHidden(true)
             }
             .onAppear {
-                if UserDefaults.standard.bool(forKey: GlobalVariables.kIsLoggedIn) {
-                    isLoggedin = true
-                }
+                UserDefaults.standard.setValue(false, forKey: GlobalVariables.kIsLoggedIn)
             }
         }
     }

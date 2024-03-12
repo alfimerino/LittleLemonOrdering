@@ -9,11 +9,18 @@ import SwiftUI
 
 struct Home: View {
     private let persistance = PersistenceController.shared
+    @State private var isLoggedIn = UserDefaults.standard.bool(forKey: GlobalVariables.kIsLoggedIn)
     
     var body: some View {
-        Menu()
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
+        if isLoggedIn {
+            Menu()
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarBackButtonHidden(true)
+        } else {
+            FirstOnboarding()
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarBackButtonHidden(true)
+        }
     }
 }
 
